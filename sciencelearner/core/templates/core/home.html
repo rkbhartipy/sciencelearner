@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="{% static 'core/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/facultymemberr.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/firstcontainercs.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/mycoursecss.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/homepagecss.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/review.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/performance.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/custom.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/whatwedocss.css' %}">
+
+</head>
+<body>
+
+{% block mycontent %}
+{% endblock mycontent %}
+
+{% block firstcontainerblock %}
+  {% include 'core/firstcontainer.html' %}
+{% endblock firstcontainerblock %}
+
+{% block whatwedoblock %}
+  {% include 'core/whatwedo.html' %}
+{% endblock whatwedoblock %}
+
+{% block mycourseblock %}
+  {% include 'core/mycourse.html' %}
+{% endblock mycourseblock %}
+
+{% block facultyblock %}
+  {% include 'core/facultymember.html' %}
+{% endblock facultyblock %}
+
+{% block commentsectionblock %}
+  {% include 'core/comment.html' %}
+{% endblock commentsectionblock %}
+
+
+<div class="container-fluid footerblock  text-white">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="row p-2 text-warning">
+        <div class="col-sm-2">
+          <h6 class="d-inline"><i class="fas fa-phone-alt"></i></h6>
+        </div>
+        <div class="col-sm-10">
+          <h6 class="d-inline text-success">+91-7011748209</i></h5>
+        </div>
+      </div>
+      <div class="row p-2 text-warning">
+        <div class="col-sm-2">
+          <h6 class="d-inline"><i class="fas fa-map-pin"></i></i></h5>
+        </div>
+        <div class="col-sm-10">
+          <h6 class="d-inline text-success">A-23 Mahaveer Enclave Dwarka New Delhi</i></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-9">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, magnam asperiores deserunt architecto suscipit pariatur eos illo totam minima nisi magni cum maiores beatae voluptatem. Perferendis beatae corrupti magni fugit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, magnam asperiores deserunt architecto suscipit pariatur eos illo totam minima nisi magni cum maiores beatae voluptatem. Perferendis beatae corrupti magni fugit?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, magnam asperiores deserunt architecto suscipit pariatur eos illo totam minima nisi magni cum maiores beatae voluptatem. Perferendis beatae corrupti magni fugit?</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 mt-3 text-warning">
+      <span><i class="fas fa-copyright"></i> All rights are reserved to sciencelearner.com</span>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'core/js/jquery.js' %}"></script>
+<script src="{% static 'core/js/popper.js' %}"></script>
+<script src="{% static 'core/js/all.js' %}"></script>
+<script src="{% static 'core/js/bootstrap.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<script src="{% static 'core/js/facultyslider.js' %}"></script>
+<script src="{% static 'core/js/counterinwwd.js' %}"></script>
+<style>.footerblock{ background-color:black; } </sty>
+
+
+</body>
+</html>

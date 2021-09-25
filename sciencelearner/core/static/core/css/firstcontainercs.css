@@ -1,0 +1,32 @@
+html,body{
+  height: 100%;
+}
+
+.logo-navbar{
+  height: 50px;
+}
+.quote-homepage{
+  margin-top: 150px;
+  color:green;
+  font-weight: bold;
+  text-align: center;
+  border: 10px solid rgb(65, 107, 65);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.social-media{
+  align-content: center;
+}
+
+.navbar-h6-top{
+  margin-left: 20px;
+}
+
+.nav-item{
+  font-family:'Times New Roman', Times, serif;
+}
+
+.nav-link{
+  color:#1a6a62;
+}

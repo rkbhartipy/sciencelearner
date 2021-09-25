@@ -1,0 +1,31 @@
+.mycourse-course-name{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+.mycourse-course-name{
+  transition: transform .4s; 
+}
+.mycourse-course-name:hover {
+  transform: scale(1.1); 
+  text-decoration: none;
+}
+
+.mycourse-row{
+  box-shadow: 10px 10px 10px red;
+}
+.course-offered-title{
+  border: 2px green;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: whitesmoke;
+}
+
+.course-name-link{
+  color: whitesmoke;
+}
+.course-name-link:hover{
+  text-decoration: none;
+  text-decoration: none;
+  color: white;
+}

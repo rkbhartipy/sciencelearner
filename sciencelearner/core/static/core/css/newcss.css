@@ -1,0 +1,35 @@
+html,body{
+  height: 100%;
+}
+
+/* faculty member css style */
+.faculty-member-profile{
+  height: 300px;
+  transition: transform 0.5s;
+}
+
+.faculty-member-profile:hover{
+  transform:scale(1.3);
+}
+
+.faculty-container{
+  box-shadow: 10px 10px 10px grey; 
+}
+
+.faculty-name-link{
+  font-family: Candara;
+  color: white;
+  text-decoration: none;
+}
+
+.faculty-member-title{
+  border: 2px green;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: whitesmoke;
+}
+
+.faculty-name-link:hover{
+  text-decoration: none;
+  font-weight: bold;
+}

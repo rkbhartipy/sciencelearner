@@ -1,0 +1,82 @@
+{% load static %}
+{% block mycontent %}
+<div class="container-fluid bg-dark text-white">
+  <div class="row">
+    <h3 class="mt-3">What People Say About Us</h3>
+  </div>
+  <div class="row">
+    <div class="col-sm-3 offset-8 text-right">
+      {% if not request.user.is_authenticated %}
+        <a href="{% url 'signin' %}">Signin To Comment</a>
+      {% endif %}
+    </div>
+  </div>
+  {% for comment in comments %}
+  <div class="row">
+    <div class="col-sm-10">
+      <div class="media">
+        <div class="rounded-circle border bg-{{bgclr}} font-weight-bold p-3 bg-info border-white">
+          {{comment.firstletterofname}}
+        </div>
+        <div class="media-body">
+          <div class="ml-4 mt-2"><h5>{{comment.name}}</h5></div>
+          <div class="ml-5"><p>{{comment.comment}}</p></div>
+          <div class="ml-5">
+            <a class="like-comment-page" href="">Like</a>
+            <a class="reply-comment-page" href="">Reply</a>
+          </div>
+        </div>
+      </div>
+      <hr color="white">
+    </div>
+  </div>
+  {% endfor %}
+  <div class="row">
+    <div class="col-sm-9 text-right">
+      <a href="{% url 'viewallcomments' %}"><h6>View All Comments......</h6></a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+          {% for field in form %}
+            <div>{{field.label_tag}}</div>
+            <div>{{field}}</div>
+            <div>{{field.errors}}</div>
+          {% endfor %}
+        </div>
+        <input class="btn btn-primary my-3" type="submit" value="Submit">
+        {% if request.POST %}
+          {% if not request.user.is_authenticated %}
+            <script>
+              alert("login to comment")
+            </script>
+          {% endif %}
+        {% endif %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock mycontent %}
+
+{% block firstcontainerblock %}
+{% endblock firstcontainerblock %}
+
+{% block whatwedoblock %}
+{% endblock whatwedoblock %}
+
+{% block mycourseblock %}
+{% endblock mycourseblock %}
+
+{% block facultyblock %}
+{% endblock facultyblock %}
+
+
+<!--including review and perfornce page-->
+
+{% block reviewandperformanceblock %}
+{% endblock reviewandperformanceblock %}
+
+

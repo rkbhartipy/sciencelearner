@@ -1,0 +1,86 @@
+{% extends 'core/home.html' %}
+{% block mycontent %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      {% include 'core/navbar.html' %}
+    </div>
+  </div>
+  <div class="row justify-content-center my-4">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <div class="mx-4 border border-info rounded shadow-lg">
+        <h1 class="text-center font-weight-bold">LOGIN</h1>
+
+          {% if request.POST %}
+            {% if not form.username.errors %}
+              {% if not form.username.errors %}
+                {% if messages %}
+                  {% for msg in messages %}
+                    <div class="text-danger text-center">{{msg}}</div>
+                  {% endfor %}
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endif %}
+
+        <form action="" method="POST" novalidate>
+          {% csrf_token %}
+          <div class="form-group">
+            {% for field in form %}
+              <div class="mx-5 p-3">
+                {{field.label_tag}}
+                <div class="shadow-lg">{{field}} </div>
+                <div class="mx-2 text-danger">{{field.errors}}</div>
+              </div>
+            {% endfor %}
+          </div>
+          
+          <div class="text-center">
+            <input class="btn btn-primary my-4 px-5" type="submit" value="Login">
+          </div>
+          <hr color="gray" class="mx-4">
+          <div class="text-center my-4">
+            <h6 class="d-inline">Login With</h6>
+            <a href=""><i class="fab fa-facebook"></i></a>
+            <a href=""><i class="fab fa-google"></i></a>
+          </div>
+          <div class="text-center mb-3">
+            <h6 class="d-inline">New User?</h6>
+            <a href="{% url 'signup' %}" class="btn btn-success rounded-pill">Sign up</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+{% endblock mycontent %}
+
+
+{% block firstcontainerblock %}
+{% endblock firstcontainerblock %}
+
+{% block whatwedoblock %}
+{% endblock whatwedoblock %}
+
+{% block mycourseblock %}
+{% endblock mycourseblock %}
+
+{% block facultyblock %}
+{% endblock facultyblock %}
+
+{% block commentblock %}
+{% endblock commentblock %}
+
+{% block commentsectionblock %}
+{% endblock commentsectionblock %}
+
+
+<!--including review and perfornce page-->
+
+{% block reviewandperformanceblock %}
+
+{% endblock reviewandperformanceblock %}

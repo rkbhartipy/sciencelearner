@@ -1,0 +1,27 @@
+{% load static %}
+{% block firstcontainerblock %}
+<style>
+  .firstcontainercls{
+    background-image: url("{% static 'core/image/bgeye.jpg'%}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:fixed;
+  }
+</style>
+<div class="container-fluid firstcontainercls mb-5">
+  <div class="row">
+    <div class="col-sm-12">
+      {% include 'core/navbar.html' %}
+    </div>
+  </div>
+  <div class="row mx-2 rounded">
+    <div class="col-sm-5">
+      <div class="quote-homepage h1 rounded-pill text-white" style="font-family: 'Source Serif Pro', serif;margin-bottom:400px;">
+        <p>"Easiest way of science learning"</p>
+      </div>
+    </div>
+    <div class="col-sm-6 text-center">
+    </div>
+  </div>
+</div>
+{% endblock firstcontainerblock %}

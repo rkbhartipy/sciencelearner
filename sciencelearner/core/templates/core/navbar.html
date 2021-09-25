@@ -1,0 +1,88 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static 'core/image/logo.jpg' %}" class="logo-navbar img-fluid rounded-circle " alt="">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fas fa-bars text-white"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-success" href="{% url 'contact' %}">Contact <span class="sr-only">(current)</span></a>
+            </li>
+            {% if not request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link text-success" href="{% url 'signup' %}">Signup <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link text-success" href="{% url 'signin' %}">Signin <span class="sr-only">(current)</span></a>
+              </li>
+            {% endif %}
+            <li class="nav-item active">
+                <a class="nav-link text-success" href="{% url 'joinus' %}" >Join <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item active">
+                {% if request.user.is_authenticated %}
+                  {% comment %} <span><a href="{% url 'signout' %}" style="color:black; text-decoration:none; hover:color-red;font-weight:bold;" onMouseEnter="this.style.color='#0F0'", OnMouseLeave="this.style.color='black'">SIGNOUT</a></span> {% endcomment %}
+                  
+                  <li class="nav-item active">
+                    <a class="nav-link text-success" href="{% url 'signout' %}">Signout <span class="sr-only">(current)</span></a>
+                  </li>
+                {% endif %}
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="row mt-4 justify-content-end">
+          <h6 class="navbar-h5-top font-weight-bold text-white">follow us on</h6>
+
+          <span class="px-4"><a href="https://www.facebook.com/sciencelearner999/">
+          <i class="fab fa-facebook-f text-primary"></i></a></span>
+
+          <span class="px-4"><a href="#"><i class="fab fa-twitter text-primary"></i></a></span>
+
+          <span class="px-4"><a href="https://www.instagram.com/science_learner18/"><i class="fab fa-instagram text-primary"></i></a></span>
+          
+          <span class="px-4"><a href="#"><i class="fab fa-google-plus-g text-primary"></i></a></span>
+
+          {% if request.user.is_authenticated %}
+            <div class="px-3">
+              {% block profileicon %}
+                <a href="{% url 'profile' %}"><i class="fas fa-user-circle fa-2x text-dark"></i></a>
+              {% endblock profileicon %}
+            </div>
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

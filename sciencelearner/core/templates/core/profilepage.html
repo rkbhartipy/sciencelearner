@@ -1,0 +1,207 @@
+{% extends 'core/home.html' %}
+
+{% load static %}
+{% block mycontent %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        {% include 'core/navbar.html' %}
+      </div>
+    </div>
+    <div class="row justify-content-center mx-4 shadow-lg mt-5">
+      <div class="col-sm-4">
+        <img class="border border-info p-1" src="{{img.profile.url}}" width="200px" height="200px" alt="">
+      </div>
+      <div class="col-sm-4 text-left" style="font-family: 'Bitter', serif;">
+        <div class="row">
+          <div class="col-sm-12">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="text-dark font-weight-bold h4 my-2">Username :</div>
+              </div>
+              <div class="col-sm-6">
+                {% if request.user.is_superuser %}
+                  <div class="text-dark h4 my-2">
+                    {{username}} 
+                    <i class="far fa-check-circle text-primary" style="font-size:15px;"></i>
+                  </div>
+                {% else %}
+                  <div class="text-dark h4 my-2">{{username}}</div>
+                {% endif %}
+                
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="text-dark font-weight-bold h4 my-2">Full Name :</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-dark h4 my-2">{{firstname}} {{lastname}}</div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="text-dark font-weight-bold h4 my-2">Email :</div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-dark h4 my-2">{{email}}</div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 text-right">
+        
+        <a href="{% url 'updateprofile' request.user.id %}" class="btn btn-secondary btn-sm">Edit Profile</a>
+        <a href="{% url 'deleteacc' %}" class="btn btn-danger btn-sm" onclick="">Delete My Profile</a>
+        <form action="" method="POST" class="mt-4" enctype="multipart/form-data">
+          {% csrf_token %}
+            <div class="text-right btn btn-success btn-sm mt-5">{{form.profile}}</div>
+            <input type="submit" value="Change Profile Picture" class="btn btn-info btn-sm my-2">
+        </form>
+      </div>
+    </div>
+
+    {% if not request.user.is_superuser %}
+    <!-- "course that i have applied for" title -->
+    <div class="row mx-4">
+      <div class="col-sm-12">
+        <h4 class="text-success font-weight-bold mt-3">Course That I have Enrolled For</h4>
+      </div>
+    </div>
+    <hr color="blue" class="mx-4">
+    <!-- course that i have applied for -->
+    <div class="row mx-4">
+      <div class="col-sm-6">
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Neet :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.neet}}</div>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Jee :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.jee}}</div>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Class11 :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.class11}}</div>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Class12 :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.class12}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Class 11 Crash Course :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.class11crashcourse}}</div>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Calss 12 Crash Course :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.class12crashcourse}}</div>
+          </div>
+        </div>
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-bold h4 my-2">Class 6 to 10 Course :</div>
+          </div>
+          <div class="col-sm-6">
+            <div class="text-dark font-weight-normal h4 my-2">{{usercoursedtl.class6to10}}</div>
+          </div>
+        </div>
+        <div class="row my-2 mt-3">
+          <div class="col-sm-12 text-center">
+            <a href="{% url 'choosecourse' %}" class="btn btn-info">Choose course</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+      <hr color="pink" class="mx-2 mt-4">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">First name</th>
+                <th scope="col">Last name</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for usr in users %}
+                <tr>
+                  <th scope="row">{{forloop.counter}}</th>
+                  <td>{{usr.username}}</td>
+                  <td>{{usr.email}}</td>
+                  <td>{{usr.first_name}}</td>
+                  <td>{{usr.last_name}}</td>
+                  {% if usr.is_superuser %}
+                    <td> <a href="{% url 'deleteSupUsr' usr.username %}" style="pointer-events: none; opacity: 40%;" class="btn btn-dark">Delete</a>  </td>
+                  {% else %}
+                    <td disabled="disabled"> <a href="{% url 'deleteSupUsr' usr.username %}" class="btn btn-danger">Delete</a>  </td>
+                  {% endif %}
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-2">
+          <button class="btn btn-primary">Add new user</button>
+        </div>
+      </div>
+    {% endif %}
+
+
+  </div>
+{% endblock mycontent %}
+
+
+{% block firstcontainerblock %}
+{% endblock firstcontainerblock %}
+
+{% block whatwedoblock %}
+{% endblock whatwedoblock %}
+
+{% block mycourseblock %}
+{% endblock mycourseblock %}
+
+{% block facultyblock %}
+{% endblock facultyblock %}
+
+{% block commentsectionblock %}
+{% endblock commentsectionblock %}
+
+
+<!--including review and perfornce page-->
+
+{% block reviewandperformanceblock %}
+
+{% endblock reviewandperformanceblock %}

@@ -1,0 +1,46 @@
+{% load static %}
+
+{% block whatwedoblock %}
+  <div class="container-fluid bg-success">
+    <div class="row">
+      <div class="col-sm-6 my-5">
+        <div style="font-family:Nunito; color:White">
+          <h1>What We Do</h1>
+        </div>
+        <p class="text-justify text-dark" style="font-family:Karla (400); font-size:20px;">
+          Aorem ipsum dolor sit amet consectetur adipisicing elit. Ab illo consequuntur sapiente iure omnis dignissimos culpa, cupiditate dolorum? Fugit excepturi voluptates et quibusdam ex suscipit quidem quaerat alias harum molestiae!
+          Ratione laboriosam, corrupti dicta provident libero distinctio, eum ut natus minima et doloremque consequuntur fuga quos temporibus quisquam asperiores sed? Perferendis aspernatur quis ullam officiis voluptatum necessitatibus autem! Totam, aliquam!
+          Adipisci reiciendis error suscipit fuga ab? Minima, tenetur autem similique quia atque! Id eveniet odio cupiditate eos vero laboriosam sit pariatur sapiente!
+          Vitae ratione magni nihil qui voluptatum ex nam 
+        </p>
+      </div>
+      <div class="col-sm-6 my-5">
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe clas="embed-responsive-item" src="{% static 'core/video/whatwedovideo.mp4' %}" autoplay="true"></iframe>
+          
+          
+          {% comment %} <object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/v1gTI4BOPUw?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/v1gTI4BOPUw?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object> {% endcomment %}
+          
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-sm-3 mb-5 container">
+        <div class="counter h2" data-target=400>0</div>
+        <h4>Students</h4>
+			</div>
+      <div class="col-sm-3 mb-5 container">
+        <div class="counter h2" data-target=20>0</div>
+        <h4>faculty</h4>
+      </div>
+      <div class="col-sm-3 mb-5 container">
+        <div class="counter h2" data-target=2000>0</div>
+        <h4>Passouts</h4>
+			</div>
+      <div class="col-sm-3 mb-5 container">
+        <div class="counter h2" data-target=10>0</div>
+        <h4>Year Experiences</h4>
+      </div>
+    </div>
+  </div>
+{% endblock whatwedoblock %}

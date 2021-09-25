@@ -1,0 +1,46 @@
+{% load static %}
+{% block facultyblock %}
+  <div class="container-fluid bg-success">
+    <div class="row my-3 justify-content-center">
+      <div class="col-sm-3 text-center mt-3">
+        <div class="faculty-member-title shadow-lg rounded-pill">
+          <h4>Our Faculty Member</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="owl-carousel owl-theme ">
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty1.jpg' %}" height="300px" alt="">
+          <a href="" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Mr. Andrew</h5></a>
+          </div>
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty2.jpg' %}" height="300px" alt="">
+          <a href="#" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Ms. Janilia</h5></a>
+          </div>
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty3.jpg' %}" height="300px" alt="">
+          <a href="#" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Mr. John</h5></a>
+          </div>
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty4.jpg' %}" height="300px" alt="">
+          <a href="#" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Ms. Pary</h5></a>
+          </div>
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty5.jpg' %}" height="300px" alt="">
+          <a href="#" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Ms. Anne</h5></a>
+          </div>
+          <div class="item"><img class="rounded" src="{% static 'core/image/faculty6.jpg' %}" height="300px" alt="">
+          <a href="#" class="faculty-name-link" data-target="#facultymodal" data-toggle="modal"><h5>Mr. Ryan</h5></a>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim rerum ducimus nobis dolorum voluptatum minus neque vitae, reprehenderit ipsam sunt nemo nostrum dicta, facere iusto unde impedit. Eos, non iste?
+        Facere molestias corrupti ex debitis quasi. Quasi vel unde excepturi necessitatibus distinctio, hic aliquid quia quidem nulla, eos odio enim, porro soluta nihil natus cupiditate in blanditiis! Beatae, sed totam!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        {% include 'core/facultydetailspopup.html' %}
+      </div>
+    </div>
+  </div>
+{% endblock facultyblock %}
