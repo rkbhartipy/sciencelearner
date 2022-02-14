@@ -1,0 +1,137 @@
+{% extends 'core/home.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+
+{% block mycontent %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        {% include 'core/navbar.html' %}
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">NEET/JEE</h5>
+            <p class="card-text">NEET syllabus 2022 includes topics from Physics, Chemistry, and Biology Class 11 and 12 curricula. Download the NEET syllabus PDF below.</p>
+            <a href="#" class="btn btn-primary">Download full syllabus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Class 11/12</h5>
+            <p class="card-text">
+              <ul>
+                <li>Physics</li>
+                <li>Chemistry</li>
+                <li>Maths</li>
+                <li>Bio</li>
+                <li>4 Sample paper of each chapter</li>
+                <li>One test for each chapter</li>
+              </ul>
+            </p>
+            <a href="#" class="btn btn-primary">Download full syllabus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Class 11/12 Crash Course</h5>
+            <p class="card-text">
+              <ul>
+                <li>Physics</li>
+                <li>Chemistry</li>
+                <li>Maths</li>
+                <li>Bio</li>
+                <li>5 Sample paper of each chapter</li>
+                <li>3 test for each chapter</li>
+                <li>Time : 3 Months</li>
+              </ul>
+            </p>
+            <a href="#" class="btn btn-primary">Download full syllabus</a> 
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-4">
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Class 6 to 10</h5>
+            <p class="card-text">
+              <ul>
+                <li>Maths</li>
+                <li>English</li>
+                <li>Science</li>
+                <li>Bio</li>
+                <li>1 test for each chapter</li>
+              </ul>
+            </p>
+            <a href="#" class="btn btn-primary">Download full syllabus</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Other Course</h5>
+            <p class="card-text">
+              Other courses rather than these courses can be started on special request like
+              <ul>
+                <li>CS/IT</li>
+                <li>SSC CGL/CSHL</li>
+                <li>Web Development</li>
+                <li>Graphics Design</li>
+                <li>Photoshop</li>
+              </ul>
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr color="red">
+    <div class="row text-center justify-content-center mt-3">
+      <div class="col-sm-6">
+        <a onClick="loginalert()"  href="{% url 'choosecourse' %}" class="btn btn-success btn-lg my-3">Choose Course</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    function loginalert(){
+      {% if not request.user.is_authenticated %}
+        alert("please login to select the course")
+      {% endif %}
+    }
+  </script>
+{% endblock mycontent %}
+
+
+{% block firstcontainerblock %}
+{% endblock firstcontainerblock %}
+
+{% block whatwedoblock %}
+{% endblock whatwedoblock %}
+
+
+{% block mycourseblock %}
+{% endblock mycourseblock %}
+
+{% block facultyblock %}
+{% endblock facultyblock %}
+
+{% block commentsectionblock %}
+{% endblock commentsectionblock %}
+
+
+
+<!--including review and perfornce page-->
+
+{% block reviewandperformanceblock %}
+{% endblock reviewandperformanceblock %}
+

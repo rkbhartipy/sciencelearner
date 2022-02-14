@@ -16,9 +16,10 @@
       </div>
       <div class="col-sm-6 my-5">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe clas="embed-responsive-item" src="{% static 'core/video/whatwedovideo.mp4' %}" autoplay="true"></iframe>
+          {% comment %} <iframe clas="embed-responsive-item" src="{% static 'core/video/whatwedovideo.mp4' %}" autoplay="true"></iframe> {% endcomment %}
           
-          
+          <iframe width="310px" height="200px" src="https://www.youtube.com/embed/Br-rP0tQnuE?&autoplay=1&mute=1" title="YouTube video player" frameborder="100" allowfullscreen></iframe>
+
           {% comment %} <object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/v1gTI4BOPUw?version=3"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/v1gTI4BOPUw?version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></object> {% endcomment %}
           
         </div>

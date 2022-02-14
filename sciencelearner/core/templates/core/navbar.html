@@ -32,21 +32,8 @@
             <li class="nav-item active">
                 <a class="nav-link text-success" href="{% url 'joinus' %}" >Join <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link text-success dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                More
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
             <li class="nav-item active">
                 {% if request.user.is_authenticated %}
-                  {% comment %} <span><a href="{% url 'signout' %}" style="color:black; text-decoration:none; hover:color-red;font-weight:bold;" onMouseEnter="this.style.color='#0F0'", OnMouseLeave="this.style.color='black'">SIGNOUT</a></span> {% endcomment %}
-                  
                   <li class="nav-item active">
                     <a class="nav-link text-success" href="{% url 'signout' %}">Signout <span class="sr-only">(current)</span></a>
                   </li>
@@ -59,16 +46,17 @@
 
     <div class="col-sm-6">
       <div class="row mt-4 justify-content-end">
-          <h6 class="navbar-h5-top font-weight-bold text-white">follow us on</h6>
+          <h6 class="navbar-h5-top font-weight-bold text-white" target="_blank">follow us on</h6>
 
-          <span class="px-4"><a href="https://www.facebook.com/sciencelearner999/">
+          <span class="px-4"><a href="https://www.facebook.com/sciencelearner999/" target="_blank">
           <i class="fab fa-facebook-f text-primary"></i></a></span>
 
-          <span class="px-4"><a href="#"><i class="fab fa-twitter text-primary"></i></a></span>
+          <span class="px-4"><a href="#"><i class="fab fa-twitter text-primary" target="_blank"></i></a></span>
 
-          <span class="px-4"><a href="https://www.instagram.com/science_learner18/"><i class="fab fa-instagram text-primary"></i></a></span>
+          <span class="px-4"><a href="https://www.instagram.com/science_learner18/" target="_blank"><i class="fab fa-instagram text-primary"></i></a></span>
           
           <span class="px-4"><a href="#"><i class="fab fa-google-plus-g text-primary"></i></a></span>
+          <span class="px-4"><a href="https://www.youtube.com/c/ScienceLearner" target="_blank"><i class="fab fa-youtube text-primary"></i></a></span>
 
           {% if request.user.is_authenticated %}
             <div class="px-3">

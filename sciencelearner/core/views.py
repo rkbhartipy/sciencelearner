@@ -11,6 +11,11 @@ from django.views.generic.edit import UpdateView
 import random
 from django.contrib.auth.decorators import login_required
 
+# password reset
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm
+from django.contrib.auth import update_session_auth_hash
+
+
 # Create your views here.
 
 # home and comments
@@ -56,6 +61,8 @@ def signup(request):
         class11=False,class12=False, class11crashcourse=False,
         class12crashcourse=False, class6to10=False)
         reg.save()
+
+        messages.success(request, "Successfully registered")
 
         return redirect('/core/signin/')
     else:
@@ -222,3 +229,59 @@ def deleteaccountSuper(request, usr=None):
   reg3.delete()
   return redirect('/core/profile/')
 
+def addusersuperuser(request):
+  if request.user.is_superuser and request.user.is_authenticated:
+    if request.method=="POST":
+      form=StudentSignupForm(request.POST)
+      if form.is_valid():
+        form.save()
+        uname=form.cleaned_data['username']
+        fname=form.cleaned_data['first_name']
+        lname=form.cleaned_data['last_name']
+        email1=form.cleaned_data['email']
+        randval=random.randint(0,10000000)
+
+        reg=ProfileModel.objects.create(myid=randval,username=uname,
+        firstname=fname, lastname=lname, email=email1, profile="none")
+        reg.save()
+
+        reg=EnrolledCoursedModelForm.objects.create(myid=randval,username=uname,
+        stdfullname=(fname+lname), stdemail=email1, contactno="0000000000",
+        onlineoroffline="none", neet=False, jee=False,
+        class11=False,class12=False, class11crashcourse=False,
+        class12crashcourse=False, class6to10=False)
+        reg.save()
+        messages.success(request, "You have added the user successfully")
+    else:
+      form=StudentSignupForm()
+    return render(request, "core/addusersuper.html", {'form': form})
+  else:
+    return render(request, "core/home.html")
+
+@login_required(login_url="/core/signin/")
+def changepassword(request):
+  if request.user.is_authenticated:
+    form=PasswordChangeForm(user=request.user, data=request.POST)
+    if form.is_valid():
+      form.save()
+      update_session_auth_hash(request, form.user)
+      return HttpResponseRedirect('/core/profile/')
+    else:
+      form=PasswordChangeForm(user=request.user)
+    return render(request, "core/changepassword.html", {'form': form})
+  else:
+    return HttpResponseRedirect("/core/signin/")
+
+
+def resetpassword(request):
+  form=PasswordResetForm()
+  if form.is_valid():
+    form.save()
+    update_session_auth_hash(request, form.user)
+    return HttpResponseRedirect('/core/profile/')
+  else:
+    form=PasswordResetForm()
+    return render(request, "core/resetpassword.html", {'form': form})
+
+def coursedetails(request):
+  return render(request, "core/syllbous.html")
